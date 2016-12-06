@@ -1,4 +1,4 @@
-FROM ansible/ansible
+FROM ansible/ansible:ubuntu1604
 MAINTAINER neko-neko
 
 RUN apk install git golang
