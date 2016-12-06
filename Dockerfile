@@ -1,7 +1,8 @@
-FROM golang:alpine
+FROM ansible:ansible
 MAINTAINER neko-neko
 
-RUN apk add --update git bash make
+RUN apk install git golang
+
 WORKDIR $GOPATH/src/github.com/hashicorp/terraform
 RUN git clone https://github.com/hashicorp/terraform.git ./ && \
     git checkout v0.7.13 && \
