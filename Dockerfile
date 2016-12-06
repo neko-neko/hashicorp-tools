@@ -1,7 +1,8 @@
 FROM ansible/ansible:ubuntu1604
 MAINTAINER neko-neko
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y git golang
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y golang
 
 WORKDIR $GOPATH/src/github.com/hashicorp/terraform
 RUN git clone https://github.com/hashicorp/terraform.git ./ && \
